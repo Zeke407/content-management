@@ -1,8 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 
 const Task = ({ task, onDelete, onToggle }) => {
-  const placeTask = () => {};
-
   return (
     <div className='bg-light mb-2' onDoubleClick={() => onToggle(task.id)}>
       <h3 className='text-center mb-0'>{task.text}</h3>
