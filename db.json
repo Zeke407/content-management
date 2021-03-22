@@ -1,3 +1,30 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "text": "awd",
+      "date": "Thursday",
+      "description": "wad",
+      "grade": "",
+      "id": 1
+    },
+    {
+      "text": "awd",
+      "date": "Thursday",
+      "description": "awd",
+      "grade": "",
+      "id": 3
+    }
+  ],
+  "grades": [
+    {
+      "title": "Math",
+      "grade": "99.17",
+      "id": 1
+    },
+    {
+      "title": "Intro Phys",
+      "grade": "91",
+      "id": 2
+    }
+  ]
 }

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import Task from './Task';
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onAdd, grades }) => {
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
+  const [grade, setGrade] = useState('');
   const [description, setDescription] = useState('');
 
   //Form submit handler
@@ -20,10 +22,11 @@ const AddTask = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, date, description });
+    onAdd({ text, date, description, grade });
     setText('');
-    //setDate('');
+    setGrade('');
     setDescription('');
+    onAdd({ text, date, description });
   };
 
   return (
@@ -64,6 +67,16 @@ const AddTask = ({ onAdd }) => {
               <option value='Friday'>Friday</option>
               <option value='Saturday'>Saturday</option>
               <option value='Sunday'>Sunday</option>
+            </select>
+            <label>Class</label>
+            <select
+              className='form-control mb-2'
+              onChange={(e) => setGrade(e.target.value)}
+            >
+              <option value=''>None</option>
+              {grades.map((grade) => (
+                <option value={`${grade.title}`}>{grade.title}</option>
+              ))}
             </select>
           </div>
           <input className='btn btn-primary' type='submit' value='Save Event' />

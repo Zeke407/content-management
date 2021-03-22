@@ -3,7 +3,7 @@ import Task from './Task';
 const Tasks = ({ days, tasks, onDelete, onToggle }) => {
   return (
     <div className=''>
-      <div className='row no-gutters my-5'>
+      <div className='row no-gutters '>
         {/* loop through days and post them*/}
         {days.map((day) => (
           <div key={day.id} className='col border m-1'>
