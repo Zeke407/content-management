@@ -24,13 +24,15 @@ const AddTask = ({ onAdd, grades }) => {
 
     onAdd({ text, date, description, grade });
     setText('');
-    setGrade('');
+    //setGrade('');
     setDescription('');
-    onAdd({ text, date, description });
   };
 
   return (
-    <div className='container  mt-2 d-flex justify-content-center w-25 bg-light'>
+    <div
+      id='addEvent'
+      className=' addEvent container  mt-2 d-flex justify-content-center w-25 bg-light'
+    >
       <form onSubmit={onSubmit}>
         <div className='form-row mb-2 '>
           <div className='col'>

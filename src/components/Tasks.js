@@ -1,32 +1,24 @@
 import Task from './Task';
 
-const Tasks = ({ days, tasks, onDelete, onToggle }) => {
+const Tasks = ({ days, tasks, onDelete, onToggle, color }) => {
   return (
-    <div className=''>
+    <div className='schedule'>
       <div className='row no-gutters '>
         {/* loop through days and post them*/}
         {days.map((day) => (
-          <div key={day.id} className='col border m-1'>
+          <div key={day.id} className='col m-1 Task'>
             <h4 className='text-center'>{day.text}</h4>
             {/* for each day loop through tasks and post them if them have the same day as the day*/}
             {tasks.map((task, index) => (
               <>
-                {task.date === day.text ? (
+                {task.date === day.text && (
                   <Task
                     key={index}
                     task={task}
+                    color={color}
                     onDelete={onDelete}
                     onToggle={onToggle}
                   />
-                ) : (
-                  task.date === day.text && (
-                    <Task
-                      key={index}
-                      task={task}
-                      onDelete={onDelete}
-                      onToggle={onToggle}
-                    />
-                  )
                 )}
               </>
             ))}
