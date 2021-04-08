@@ -9,18 +9,19 @@ const Grades = ({ grades, onAddG, showAdd, onAdd }) => {
     e.preventDefault();
 
     if (!title) {
-      alert('Please add a Task');
+      alert('Please add a Class');
       return;
     }
     //Check Day is set
     if (!grade) {
-      alert('Please add a Date');
+      alert('Please add a Grade');
       return;
     }
+    //add the title and grade to the object in db.json
     onAddG({ title, grade });
+    //set the title and grade back to '' nothing
     setTitle('');
     setGrade('');
-    console.log(grades);
   };
   return (
     <div>

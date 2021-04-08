@@ -12,7 +12,9 @@ h1 {
   font-family: Verdana, Tahoma, sans-serif;
   font-weight: bold;
 }
-
+.bg-hasGrade {
+  background-color: rgb(199, 170, 170);
+}
 .card-body {
   background-color: rgb(117, 154, 174);
   border-radius: 2px;
@@ -29,8 +31,4 @@ h1 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-body > .addEvent {
-  background-color: #7fffd4;
 }

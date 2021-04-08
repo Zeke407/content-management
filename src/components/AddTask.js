@@ -31,7 +31,7 @@ const AddTask = ({ onAdd, grades }) => {
   return (
     <div
       id='addEvent'
-      className=' addEvent container  mt-2 d-flex justify-content-center w-25 bg-light'
+      className=' addEvent container  mt-2 d-flex justify-content-center w-25'
     >
       <form onSubmit={onSubmit}>
         <div className='form-row mb-2 '>
