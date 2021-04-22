@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Task from './Task';
 
 const AddTask = ({ onAdd, grades }) => {
   const [text, setText] = useState('');
@@ -24,7 +23,6 @@ const AddTask = ({ onAdd, grades }) => {
 
     onAdd({ text, date, description, grade });
     setText('');
-    //setGrade('');
     setDescription('');
   };
 

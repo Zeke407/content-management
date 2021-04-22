@@ -4,11 +4,11 @@ import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import GradeQ from './components/GradeQ';
 import Grades from './components/Grades';
-import ShowAddGrade from './components/ShowAddGrade';
+
+// To run the website run the commands npm run server, and npm start.
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
-  const [showAddGrade, setShowAddGrade] = useState(false);
 
   useEffect(() => {
     const getTasks = async () => {
@@ -95,10 +95,6 @@ function App() {
     const data = await res.json();
 
     setTasks([...tasks, data]);
-
-    // const id = Math.floor(Math.random() * 10000) + 1;
-    // const newTask = { id, ...task };
-    // setTasks([...tasks, newTask]);
   };
 
   //delete
@@ -136,8 +132,6 @@ function App() {
         method: 'DELETE',
       });
     }
-
-    //setTasks(tasks.filter((task) => task.id !== id));
   };
 
   const toggleD = (id) => {
@@ -187,7 +181,7 @@ function App() {
       <div class='row'>
         <div class='col-9'>
           <div class='collapse multi-collapse' id='multiCollapseExample1'>
-            <div class='card card-body'>
+            <div class='card card-body '>
               {showAddTask && (
                 <AddTask tasks={tasks} grades={grades} onAdd={addTask} />
               )}

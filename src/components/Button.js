@@ -1,4 +1,4 @@
-const Button = ({ onClick, text, color, task }) => {
+const Button = ({ onClick, text, color }) => {
   return (
     <button onClick={onClick} className='btn btn-primary'>
       {text}

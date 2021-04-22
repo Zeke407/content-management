@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Grade = ({ grades, grade, onDelete }) => {
+const Grade = ({ grades, onDelete }) => {
   return (
     <div className='container my-2'>
       <h5 className='text-center mb-0'>{grades.title}</h5>

@@ -16,7 +16,7 @@ const Tasks = ({ days, tasks, onDelete, onToggle, color }) => {
                     key={index}
                     task={task}
                     //check if the task is linked to a class/grade
-                    color={task.grade != 0 ? 'hasGrade' : 'normal'}
+                    color={task.grade !== '' ? 'hasGrade' : 'normal'}
                     onDelete={onDelete}
                     onToggle={onToggle}
                   />
