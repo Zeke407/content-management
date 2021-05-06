@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import Grade from './Grade';
 
-const Grades = ({ grades, onAddG, showAdd, onAdd }) => {
+const Grades = ({ onAddG, showAdd }) => {
   const [title, setTitle] = useState('');
   const [grade, setGrade] = useState('');
 

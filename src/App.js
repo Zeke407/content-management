@@ -4,7 +4,6 @@ import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import GradeQ from './components/GradeQ';
 import Grades from './components/Grades';
-
 // To run the website run the commands npm run server, and npm start.
 
 function App() {
@@ -97,7 +96,7 @@ function App() {
     setTasks([...tasks, data]);
   };
 
-  //delete
+  //delete a task
   const deleteTask = async (id) => {
     await fetch(`http://localhost:5000/tasks/${id}`, {
       method: 'DELETE',
@@ -105,7 +104,7 @@ function App() {
 
     setTasks(tasks.filter((task) => task.id !== id));
   };
-
+  //add a grade
   const addGrades = async (grade) => {
     const res = await fetch('http://localhost:5000/grades', {
       method: 'POST',
@@ -119,19 +118,13 @@ function App() {
 
     setGrades([...grades, data]);
   };
+  //delete a grade
   const deleteGrade = async (id) => {
     await fetch(`http://localhost:5000/grades/${id}`, {
       method: 'DELETE',
     });
 
     setGrades(grades.filter((grade) => grade.id !== id));
-  };
-  const deleteTaskAll = async (index) => {
-    for (let i = 0; i <= tasks.length; ++i) {
-      await fetch(`http://localhost:5000/tasks/${index}`, {
-        method: 'DELETE',
-      });
-    }
   };
 
   const toggleD = (id) => {
@@ -146,26 +139,6 @@ function App() {
       />
       <p className=''>
         <div className='text-center'>
-          <a
-            class='btn btn-primary mx-1 mt-2 '
-            data-bs-toggle='collapse'
-            href='#multiCollapseExample1'
-            role='button'
-            aria-expanded='false'
-            aria-controls='multiCollapseExample1'
-          >
-            Schedule
-          </a>
-          <button
-            class='btn btn-primary mx-1 mt-2'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#multiCollapseExample2'
-            aria-expanded='false'
-            aria-controls='multiCollapseExample2'
-          >
-            Classes
-          </button>
           <button
             class='btn btn-primary mx-1 mt-2'
             type='button'

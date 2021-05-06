@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const AddTask = ({ onAdd, grades }) => {
   const [text, setText] = useState('');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState('Monday');
   const [grade, setGrade] = useState('');
   const [description, setDescription] = useState('');
 

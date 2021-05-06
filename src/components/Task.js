@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Task = ({ task, onDelete, onToggle, color }) => {
+const Task = ({ task, onDelete, color }) => {
   return (
     <div className={`bg-${color} mb-2`}>
       <h3 className='text-center mb-0'>{task.text}</h3>
