@@ -1,6 +1,6 @@
 import Task from './Task';
 
-const Tasks = ({ days, tasks, onDelete, onToggle, color }) => {
+const Tasks = ({ days, tasks, onDelete, onToggle }) => {
   return (
     <div className='schedule'>
       <div className='row no-gutters '>

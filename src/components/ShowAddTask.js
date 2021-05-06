@@ -1,14 +1,14 @@
 import Button from './Button';
-const ShowAddGrade = ({ showAdd, onAdd }) => {
+const ShowAddTask = ({ showAdd, onAdd }) => {
   return (
     <div className='text-center'>
       <Button
         color={showAdd ? 'red' : 'blue'}
-        text={showAdd ? 'Close' : 'Add Grade'}
+        text={showAdd ? 'Close' : 'Add Task'}
         onClick={onAdd}
       />
     </div>
   );
 };
 
-export default ShowAddGrade;
+export default ShowAddTask;

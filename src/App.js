@@ -4,10 +4,13 @@ import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import GradeQ from './components/GradeQ';
 import Grades from './components/Grades';
+import ShowAddGrade from './components/ShowAddGrade';
+import ShowAddTask from './components/ShowAddTask';
 // To run the website run the commands npm run server, and npm start.
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
+  const [showAddGrade, setShowAddGrade] = useState(false);
 
   useEffect(() => {
     const getTasks = async () => {
@@ -133,10 +136,7 @@ function App() {
 
   return (
     <div className='container-fluid '>
-      <Header
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-      />
+      <Header />
       <p className=''>
         <div className='text-center'>
           <button
@@ -147,7 +147,7 @@ function App() {
             aria-expanded='false'
             aria-controls='multiCollapseExample1 multiCollapseExample2'
           >
-            Both
+            Toggle Both
           </button>
         </div>
       </p>
@@ -155,6 +155,10 @@ function App() {
         <div class='col-9'>
           <div class='collapse multi-collapse' id='multiCollapseExample1'>
             <div class='card card-body '>
+              <ShowAddTask
+                onAdd={() => setShowAddTask(!showAddTask)}
+                showAdd={showAddTask}
+              />
               {showAddTask && (
                 <AddTask tasks={tasks} grades={grades} onAdd={addTask} />
               )}
@@ -170,13 +174,22 @@ function App() {
         <div class='col-3'>
           <div class='collapse multi-collapse' id='multiCollapseExample2'>
             <div class='card card-body'>
+              <ShowAddGrade
+                onAdd={() => setShowAddGrade(!showAddGrade)}
+                showAdd={showAddGrade}
+              />
               <GradeQ
                 grades={grades}
-                onAdd={() => setShowAddTask(!showAddTask)}
-                showAdd={showAddTask}
+                onAdd={() => setShowAddGrade(!showAddGrade)}
+                showAdd={showAddGrade}
                 onAddG={addGrades}
               />
-              <Grades grades={grades} onDelete={deleteGrade} />
+              <Grades
+                onAdd={() => setShowAddGrade(!showAddGrade)}
+                showAdd={showAddGrade}
+                grades={grades}
+                onDelete={deleteGrade}
+              />
             </div>
           </div>
         </div>
